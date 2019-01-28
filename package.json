@@ -1,0 +1,42 @@
+{
+  "name": "proyecto-modulo2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DEBUG=proyecto-modulo2:* nodemon -e hbs,js --inspect ./bin/www",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proyecto-gonzalo-mario/proyecto-modulo2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/proyecto-gonzalo-mario/proyecto-modulo2/issues"
+  },
+  "homepage": "https://github.com/proyecto-gonzalo-mario/proyecto-modulo2#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.3",
+    "crypto": "^1.0.1",
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "hbs": "^4.0.1",
+    "http-errors": "^1.7.1",
+    "mongoose": "^5.4.7",
+    "morgan": "^1.9.1",
+    "nodemailer": "^5.1.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
