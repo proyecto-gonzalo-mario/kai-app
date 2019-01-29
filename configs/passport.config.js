@@ -39,14 +39,14 @@ passport.use('local-auth', new LocalStrategy({
 }));
 
 passport.use('google-auth', new GoogleStrategy({
-  clientID: process.env.GOOGLE_AUTH_CLIENT_ID || 'toDo',
-  clientSecret: process.env.GOOGLE_AUTH_CLIENT_SECRET || 'todDo',
+  clientID: process.env.GOOGLE_AUTH_CLIENT_ID || 'todo',
+  clientSecret: process.env.GOOGLE_AUTH_CLIENT_SECRET || 'todo',
   callbackURL: process.env.GOOGLE_AUTH_CB || '/sessions/google/cb',
 }, authenticateOAuthUser));
 
 passport.use('facebook-auth', new FBStrategy({
-  clientID: process.env.FB_AUTH_CLIENT_ID || 'toDo',
-  clientSecret: process.env.FB_AUTH_CLIENT_SECRET || 'toDo',
+  clientID: process.env.FB_AUTH_CLIENT_ID || 'todo',
+  clientSecret: process.env.FB_AUTH_CLIENT_SECRET || 'todo',
   callbackURL: process.env.FB_AUTH_CB || '/sessions/facebook/cb',
   profileFields: ['displayName', 'emails']
 }, authenticateOAuthUser));
