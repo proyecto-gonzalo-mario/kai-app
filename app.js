@@ -9,6 +9,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const mongoose = require("mongoose");
+const weatherUtils = require('./utils/weather-utils');
 
 require('./configs/db.config');
 require('./configs/hbs.config');
@@ -55,6 +56,8 @@ app.use('/users', usersRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/', (req, res, next) => res.redirect('/users'));
 
+
+weatherUtils.getWeatherData();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
