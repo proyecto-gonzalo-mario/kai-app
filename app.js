@@ -57,7 +57,7 @@ app.use('/sessions', sessionsRouter);
 app.use('/', (req, res, next) => res.redirect('/users'));
 
 
-weatherUtils.getWeatherData();
+// weatherUtils.getWeatherData();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -76,6 +76,20 @@ module.exports.doCreate = (req, res, next) => {
     });
 };
 
+module.exports.doEdit = (req, res, next) => {
+  User.findByIdAndUpdate(req.body.id)
+    .then(user => {
+      if (!user) {
+        next(createError(404, "User not found"));
+      } else {
+        res.redirect("/user/list");
+      }
+    })
+    .catch(error => next(error));
+};
+
+
+
 module.exports.doDelete = (req, res, next) => {
   User.findByIdAndRemove(req.params.id)
     .then(user => {

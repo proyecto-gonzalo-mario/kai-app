@@ -1,1 +1,40 @@
-<h1>hello</h1>
+<div class="row mt-5">
+  <form action="/users/{{ user._id }}/edit" method="post" class="col-4 mx-auto form-inline">
+    <div class="input-group mb-2_">
+      <input type="text" class="form-control {{#if errors.email }}is-invalid{{/if}}" name="sports" placeholder="sports" value="{{ user.name }}"/>
+
+     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
+ <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" value="{{ user.sports }}">
+   <option selected>Choose...</option>
+   <option>One</option>
+   <option>Two</option>
+   <option>Three</option>
+ </select>
+
+ <div class="custom-control custom-checkbox my-1 mr-sm-2">
+   <input type="checkbox" class="custom-control-input" id="customControlInline">
+ </div>
+
+    
+  
+</select>
+    </div>
+
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fas fa-lock"></i> </span>
+      </div>
+      <input type="password" class="form-control {{#if errors.password }}is-invalid{{/if}}" name="password" placeholder="Password"/>
+      {{#if errors.password }}
+        <div class="invalid-feedback">
+          {{ errors.password }}
+        </div>
+      {{/if}}
+    </div>
+    
+    <div class="form-actions">
+      <button class="btn btn-primary btn-block" type="submit" >Submit</button>
+    </div>
+    <hr>
+  </form>
+</div>

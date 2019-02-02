@@ -39,7 +39,30 @@ const userSchema = new mongoose.Schema({
   location: {
     type: { type: String },
     coordinates: [Number]
-  }
+  },
+  sports: {
+    type: [String],
+    required: true
+  },
+  weight: {
+    type: Number
+  },
+  height: {
+    type: Number
+  },
+  windSpeedMin: {
+    type: Number
+  },
+  windSpeedMax: {
+    type: Number
+  },
+  swellHeightMin: {
+    type: Number
+  },
+  swellHeightMax: {
+    type: Number
+  },
+  
 }, { timestamps: true });
 
 userSchema.index({ location: '2dsphere' });
