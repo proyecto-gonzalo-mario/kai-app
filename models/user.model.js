@@ -36,10 +36,10 @@ const userSchema = new mongoose.Schema({
     enum: [constants.ROLE_ADMIN, constants.ROLE_ADMIN],
     default: constants.ROLE_ADMIN
   },
-  location: {
-    type: { type: String },
-    coordinates: [Number]
-  },
+  // location: {
+  //   type: { type: String },
+  //   coordinates: [Number]
+  // },
   sports: {
     type: [String],
     required: true

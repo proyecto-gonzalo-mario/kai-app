@@ -77,7 +77,9 @@ module.exports.doCreate = (req, res, next) => {
 };
 
 module.exports.doEdit = (req, res, next) => {
-  User.findByIdAndUpdate(req.body.id)
+  User.findByIdAndUpdate(req.params.id, 
+    { $set: { name: req.body.name } }
+    )
     .then(user => {
       if (!user) {
         next(createError(404, "User not found"));
