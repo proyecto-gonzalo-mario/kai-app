@@ -1,5 +1,5 @@
 <div>
-  <form action="/users/{{ session._id }}/edit" method="post">
+  <form action="/users/edit" method="post">
     <div class="form-group">
       <label for="exampleFormControlInput1">Name</label>
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" value="{{ session.name }}"
@@ -8,23 +8,23 @@
     <div class="form-group">
       <label for="exampleFormControlInput1">Email address</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" value="{{ session.email }}"
-        name="{{ session.email }}">
+        name="email">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Sports</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>Kitesurf</option>
-        <option>Windsurf</option>
-        <option>Surf</option>
-      </select>
-    </div>
+    <label for="exampleFormControlSelect2">Select your sports</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2" name="sports">
+      <option>Kitesurf</option>
+      <option>Windsurf</option>
+      <option>Surf</option>
+    </select>
+  </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Max Wind Speed (km/h)</label>
-      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="20">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="20" name="windSpeedMax" value="{{ session.windSpeedMax }}">
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Max Swell Height (m)</label>
-      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="1.5">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="1.5" name="swellHeightMax" value="{{ session.swellHeightMax }}">
     </div>
     <div class="form-actions">
       <button class="btn btn-primary btn-block" type="submit">Submit</button>

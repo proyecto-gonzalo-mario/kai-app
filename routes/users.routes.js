@@ -9,7 +9,7 @@ router.get('/', authMiddleware.isAuthenticated, usersController.list);
 router.get('/verify/:token', usersController.verify);
 router.get('/create', usersController.create);
 router.post('/create', usersController.doCreate);
-router.post('/:id/edit',authMiddleware.isAuthenticated, usersController.doEdit);
+router.post('/edit',authMiddleware.isAuthenticated, usersController.doEdit);
 router.post('/:id/delete', 
   authMiddleware.isAuthenticated, 
   authMiddleware.checkRole(constants.ROLE_ADMIN), 

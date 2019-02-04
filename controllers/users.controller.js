@@ -77,14 +77,12 @@ module.exports.doCreate = (req, res, next) => {
 };
 
 module.exports.doEdit = (req, res, next) => {
-  User.findByIdAndUpdate(req.params.id, 
-    { $set: { name: req.body.name } }
-    )
+  User.findByIdAndUpdate(req.user._id, { $set: req.body })
     .then(user => {
       if (!user) {
         next(createError(404, "User not found"));
       } else {
-        res.redirect("/user/list");
+        res.redirect("/users/list");
       }
     })
     .catch(error => next(error));
@@ -103,3 +101,10 @@ module.exports.doDelete = (req, res, next) => {
     })
     .catch(error => next(error));
 };
+
+
+//{ $set: { name: 'hello' } }, 
+// { $set: { email: req.body.email } },
+// { $set: { windSpeedMax: req.body.windSpeedMax } },
+// { $set: { swellHeightMax: req.body.swellHeightMax } },
+// { $set: { sports: req.body.swellHeightMax } }
