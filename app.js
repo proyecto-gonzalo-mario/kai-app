@@ -17,6 +17,7 @@ require('./configs/passport.config');
 
 const usersRouter = require('./routes/users.routes');
 const sessionsRouter = require('./routes/sessions.routes');
+const mapRouter = require('./routes/map.routes');
 
 const app = express();
 
@@ -54,6 +55,7 @@ app.use((req, res, next) => {
 
 app.use('/users', usersRouter);
 app.use('/sessions', sessionsRouter);
+app.use('/map', mapRouter);
 app.use('/', (req, res, next) => res.redirect('/users'));
 
 
