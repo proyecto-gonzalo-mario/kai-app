@@ -15,7 +15,7 @@ require('./configs/db.config');
 require('./configs/hbs.config');
 require('./configs/passport.config');
 
-const usersRouter = require('./routes/users.routes');
+const profileRouter = require('./routes/profile.routes');
 const sessionsRouter = require('./routes/sessions.routes');
 const mapRouter = require('./routes/map.routes');
 
@@ -53,10 +53,10 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use('/users', usersRouter);
+app.use('/profile', profileRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/map', mapRouter);
-app.use('/', (req, res, next) => res.redirect('/users'));
+app.use('/', (req, res, next) => res.redirect('/profile'));
 
 
 // weatherUtils.getWeatherData();

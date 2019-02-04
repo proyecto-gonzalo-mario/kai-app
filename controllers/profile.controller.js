@@ -15,10 +15,10 @@ module.exports.verify = (req, res, next) => {
   res.redirect("/sessions/create");
 };
 
-module.exports.list = (req, res, next) => {
+module.exports.showRiderSettings = (req, res, next) => {
   User.find()
     .then(users => {
-      res.render("users/list", {
+      res.render("profile/ridersettings", {
         users: users
       });
     })
@@ -26,14 +26,14 @@ module.exports.list = (req, res, next) => {
 };
 
 module.exports.create = (req, res, next) => {
-  res.render("users/create");
+  res.render("profile/create");
 };
 
 module.exports.doCreate = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        res.render("users/create", {
+        res.render("profile/create", {
           user: req.body,
           errors: { email: "Email already registered" }
         });
@@ -55,7 +55,7 @@ module.exports.doCreate = (req, res, next) => {
               from: '"My Awesome Project 👻" <testironhack@gmail.com>',
               to: `${user.email}`,
               subject: "Email verification",
-              text: `http://localhost:3000/users/verify/${user.token}`
+              text: `http://localhost:3000/profile/verify/${user.token}`
             })
             .then(info => console.log(info))
             .catch(error => console.log(error));
@@ -66,7 +66,7 @@ module.exports.doCreate = (req, res, next) => {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.render("users/create", {
+        res.render("profile/create", {
           user: req.body,
           errors: error.errors
         });
@@ -82,7 +82,7 @@ module.exports.doEdit = (req, res, next) => {
       if (!user) {
         next(createError(404, "User not found"));
       } else {
-        res.redirect("/users/list");
+        res.redirect("/profile/ridersettings");
       }
     })
     .catch(error => next(error));
@@ -96,7 +96,7 @@ module.exports.doDelete = (req, res, next) => {
       if (!user) {
         next(createError(404, "User not found"));
       } else {
-        res.redirect("/users");
+        res.redirect("/profile");
       }
     })
     .catch(error => next(error));

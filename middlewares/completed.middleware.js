@@ -15,6 +15,6 @@ module.exports.checkCompleteness = (req, res, next) => {
   if (req.user.name) {
     next()
   } else {
-    res.redirect('/users/edit');
+    res.redirect('/profile/edit');
   }
 }

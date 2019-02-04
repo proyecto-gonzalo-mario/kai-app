@@ -32,7 +32,7 @@ module.exports.doCreate = (req, res, next) => {
           if (error) {
             next(error);
           } else {
-            res.redirect(`/users`);
+            res.redirect(`/profile`);
           }
         });
       }
@@ -54,7 +54,7 @@ module.exports.createWithIDPCallback = (req, res, next) => {
         if (error) {
           next(error);
         } else {
-          res.redirect(`/users`);
+          res.redirect(`/profile`);
         }
       });
     }
