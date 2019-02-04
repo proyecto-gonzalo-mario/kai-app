@@ -16,6 +16,15 @@ module.exports.verify = (req, res, next) => {
 };
 
 module.exports.showRiderSettings = (req, res, next) => {
+
+//   function renderWithErrors(errors) {
+//     res.status(400).render('sessions/create', {
+//       user: req.body,
+//       errors: errors
+//     });
+// }
+
+
   User.find()
     .then(users => {
       res.render("profile/ridersettings", {
