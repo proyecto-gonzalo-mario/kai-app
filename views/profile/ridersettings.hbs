@@ -2,13 +2,23 @@
   <form action="/profile/edit" method="post">
     <div class="form-group">
       <label for="exampleFormControlInput1">Name</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" value="{{ session.name }}"
+      <input type="text" class="form-control {{#if errors.name }}is-invalid{{/if}}" id="exampleFormControlInput1" placeholder="Name" value="{{ session.name }}"
         name="name">
+        {{#if errors.name }}
+        <div class="invalid-feedback">
+          {{ errors.name }}
+        </div>
+      {{/if}}
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" value="{{ session.email }}"
+      <input type="email" class="form-control {{#if errors.email }}is-invalid{{/if}}" id="exampleFormControlInput1" placeholder="Email" value="{{ session.email }}"
         name="email">
+        {{#if errors.email }}
+        <div class="invalid-feedback">
+          {{ errors.email }}
+        </div>
+      {{/if}}
     </div>
     <div class="form-group">
     <label for="exampleFormControlSelect2">Select your sports</label>
@@ -25,6 +35,14 @@
     <div class="form-group">
       <label for="exampleFormControlInput1">Max Swell Height (m)</label>
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="1.5" name="swellHeightMax" value="{{ session.swellHeightMax }}">
+    </div>
+     <div class="form-group">
+      <label for="exampleFormControlInput1">Min Wind Speed (km/h)</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="20" name="windSpeedMin" value="{{ session.windSpeedMin }}">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Min Swell Height (m)</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="1.5" name="swellHeightMin" value="{{ session.swellHeightMin }}">
     </div>
     <div class="form-actions">
       <button class="btn btn-primary btn-block" type="submit">Submit</button>

@@ -17,7 +17,7 @@ module.exports.doCreate = (req, res, next) => {
   if (!email || !password) {
     renderWithErrors({
       email: email ? undefined : "Email is required",
-      password: password ? undefined : "Password is required"
+      password: password ? undefined : "Password is required",
     });
   }    else {
     passport.authenticate("local-auth", (error, user, validation) => {

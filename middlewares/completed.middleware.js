@@ -12,7 +12,7 @@ const createError = require('http-errors');
 // }
 
 module.exports.checkCompleteness = (req, res, next) => {
-  if (req.user.name) {
+  if (req.user.name && req.user.email && req.user.sports && req.user.windSpeedMax && req.user.windSpeedMin && req.user.swellHeightMax && req.user.swellHeightMin) {
     next()
   } else {
     res.redirect('/profile/edit');

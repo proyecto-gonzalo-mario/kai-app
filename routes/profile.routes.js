@@ -16,6 +16,7 @@ router.post('/:id/delete',
   authMiddleware.isAuthenticated, 
   authMiddleware.checkRole(constants.ROLE_ADMIN), 
   profileController.doDelete);
+  
 
 module.exports = router;
 

@@ -9,7 +9,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const mongoose = require("mongoose");
-const weatherUtils = require('./utils/weather-utils');
+const weatherUtils = require('./servicios/weather-utils');
 
 require('./configs/db.config');
 require('./configs/hbs.config');
@@ -18,6 +18,7 @@ require('./configs/passport.config');
 const profileRouter = require('./routes/profile.routes');
 const sessionsRouter = require('./routes/sessions.routes');
 const mapRouter = require('./routes/map.routes');
+const conditionsRouter = require('./routes/conditions.routes');
 
 const app = express();
 
@@ -56,7 +57,9 @@ app.use((req, res, next) => {
 app.use('/profile', profileRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/map', mapRouter);
+app.use('/conditions', conditionsRouter);
 app.use('/', (req, res, next) => res.redirect('/profile'));
+
 
 
 // weatherUtils.getWeatherData();

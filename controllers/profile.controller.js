@@ -4,6 +4,7 @@ const User = require("../models/user.model");
 const crypto = require("crypto");
 const token = crypto.randomBytes(64).toString("hex");
 const transporter = require("../configs/nodemailer.config");
+const passport = require("passport")
 
 module.exports.verify = (req, res, next) => {
   User.findByIdAndUpdate(
@@ -16,22 +17,24 @@ module.exports.verify = (req, res, next) => {
 };
 
 module.exports.showRiderSettings = (req, res, next) => {
+  
+  function renderWithErrors(errors) {
+    res.status(400).render('profile/ridersettings', {
+      user: req.body,
+      errors: errors
+    });
+  }
 
-//   function renderWithErrors(errors) {
-//     res.status(400).render('sessions/create', {
-//       user: req.body,
-//       errors: errors
-//     });
-// }
+  let { email, name } = req.body;
 
-
-  User.find()
-    .then(users => {
-      res.render("profile/ridersettings", {
-        users: users
-      });
-    })
-    .catch(error => next(error));
+  if (!email || !name) {
+    renderWithErrors({
+      email: email ? undefined : 'Email is required',
+      name: name ? undefined : "Name is required"
+    });
+  } else {
+   console.log("hola")
+  }
 };
 
 module.exports.create = (req, res, next) => {
@@ -97,8 +100,6 @@ module.exports.doEdit = (req, res, next) => {
     .catch(error => next(error));
 };
 
-
-
 module.exports.doDelete = (req, res, next) => {
   User.findByIdAndRemove(req.params.id)
     .then(user => {
@@ -111,8 +112,7 @@ module.exports.doDelete = (req, res, next) => {
     .catch(error => next(error));
 };
 
-
-//{ $set: { name: 'hello' } }, 
+//{ $set: { name: 'hello' } },
 // { $set: { email: req.body.email } },
 // { $set: { windSpeedMax: req.body.windSpeedMax } },
 // { $set: { swellHeightMax: req.body.swellHeightMax } },

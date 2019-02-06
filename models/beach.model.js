@@ -6,12 +6,11 @@ const beachSchema = new mongoose.Schema(
       type: String,
       required: "Name is required"
     },
-    // location: {
-    //   type: { type: String },
-    //   coordinates: [Number]
-    // },
-
-    sports: {
+    location: {
+      type: { type: String },
+      coordinates: [Number]
+    },
+ sports: {
       type: [String]
     }
     // weatherForecast: [{
