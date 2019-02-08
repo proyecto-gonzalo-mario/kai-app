@@ -1,9 +1,11 @@
+require("dotenv").config();
+
 const axios = require('axios');
 const MARINE_API_KEY = process.env.MARINE_API_KEY;
 
-axios.get(`http://api.worldweatheronline.com/premium/v1/marine.ashx?key=${MARINE_API_KEY}&format=json&q=36.0125,-5.6056&windspeedKmph&tp=24`)
+axios.get(`http://api.worldweatheronline.com/premium/v1/marine.ashx?key=${MARINE_API_KEY}&format=json&q=36.0125,-5.6056&tp=24`)
   .then(response => {
-    debugger;
+    console.info(response.data.data.weather[0].hourly[0]);
   })
   .catch(console.error);
 
