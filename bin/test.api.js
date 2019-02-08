@@ -5,7 +5,7 @@ const MARINE_API_KEY = process.env.MARINE_API_KEY;
 
 axios.get(`http://api.worldweatheronline.com/premium/v1/marine.ashx?key=${MARINE_API_KEY}&format=json&q=36.0125,-5.6056&tp=24`)
   .then(response => {
-    console.info(response.data.data.weather[0].hourly[0]);
+    console.info(response.data.data.weather[4].hourly[0]);
   })
   .catch(console.error);
 

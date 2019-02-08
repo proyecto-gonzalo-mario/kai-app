@@ -8,6 +8,7 @@ const MARINE_API_KEY = process.env.MARINE_API_KEY;
 
 module.exports.checkConditions = (req, res, next) => {
   const beachesData = [];
+  const sum = 0;
 
   Beach.find()
     .then(beaches => {
@@ -47,6 +48,7 @@ module.exports.checkConditions = (req, res, next) => {
             }
 
             const beachWeekWeatherForecast = {
+              beachName: beach.name,
               day1: firstDay,
               day2: secondDay,
               day3: thirdDay,
