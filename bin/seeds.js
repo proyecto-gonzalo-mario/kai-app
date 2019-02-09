@@ -23,7 +23,7 @@ const playas = [
     name: "El Palmar",
     location: {
       type:'Point',
-      coordinates: [55.8167, -3]
+      coordinates: [43.4506, -3.7358]
     },
     sports: ["Windsurf", "Surf"]
   },
@@ -31,7 +31,7 @@ const playas = [
     name: "Altea",
     location: {
       type:'Point',
-      coordinates: [23.067779, -3.685508]
+      coordinates: [36.0125, -5.6056]
     },
     sports: ["Kitesurf", "Surf"]
   },
