@@ -91,5 +91,28 @@ userSchema.methods.checkPassword = function(password) {
   return bcrypt.compare(password, this.password);
 }
 
+userSchema.methods.placesMatch = function(places) {
+  return places.filter((place) => {
+    return this.placeMatch(place);
+  });
+}
+
+userSchema.methods.placeMatch = function(place) {
+    const days = place.days;
+    const res = [];
+    days.forEach(day => {
+      res.push(day.windSpeed >= this.windSpeedMin 
+        && day.windSpeed <= this.windSpeedMax
+        && day.swellHeight >= this.swellHeightMin
+        && day.swellHeight <= this.swellHeightMax  )
+    });
+    return res.includes(true);
+}
+
+
+
 const User = mongoose.model('User', userSchema);
 module.exports = User;
+
+// place =  { name: 'Valdevaqueros',
+//           days:[ [Object], [Object], [Object], [Object], [Object], [Object] ] };

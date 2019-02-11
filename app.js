@@ -9,7 +9,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const mongoose = require("mongoose");
-const weatherUtils = require('./servicios/weather-utils');
+const weatherUtils = require('./services/weather-utils');
 
 require('./configs/db.config');
 require('./configs/hbs.config');
