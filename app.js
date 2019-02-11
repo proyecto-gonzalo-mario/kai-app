@@ -58,8 +58,6 @@ app.use('/profile', profileRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/map', mapRouter);
 app.use('/conditions', conditionsRouter);
-app.use('/', (req, res, next) => res.redirect('/profile'));
-
 
 
 // weatherUtils.getWeatherData();

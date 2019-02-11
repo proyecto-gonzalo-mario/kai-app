@@ -6,11 +6,8 @@ const authMiddleware = require('../middlewares/auth.middleware');
 const completenessMiddleware = require('../middlewares/completed.middleware');
 
 
-router.get('/', authMiddleware.isAuthenticated, completenessMiddleware.checkCompleteness, profileController.showRiderSettings);
 router.get('/verify/:token', profileController.verify);
-router.get('/create', profileController.create);
-router.post('/create', profileController.doCreate);
-router.get('/edit', authMiddleware.isAuthenticated, profileController.showRiderSettings);
+router.get('/edit', authMiddleware.isAuthenticated, profileController.edit);
 router.post('/edit', authMiddleware.isAuthenticated, profileController.doEdit);
 router.post('/:id/delete', 
   authMiddleware.isAuthenticated, 

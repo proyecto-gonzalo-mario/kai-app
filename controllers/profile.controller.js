@@ -16,85 +16,17 @@ module.exports.verify = (req, res, next) => {
   res.redirect("/sessions/create");
 };
 
-module.exports.showRiderSettings = (req, res, next) => {
-  
-  function renderWithErrors(errors) {
-    res.status(400).render('profile/ridersettings', {
-      user: req.body,
-      errors: errors
-    });
-  }
-
-  let { email, name } = req.body;
-
-  if (!email || !name) {
-    renderWithErrors({
-      email: email ? undefined : 'Email is required',
-      name: name ? undefined : "Name is required"
-    });
-  } else {
-   console.log("hola")
-  }
-};
-
-module.exports.create = (req, res, next) => {
-  res.render("profile/create");
-};
-
-module.exports.doCreate = (req, res, next) => {
-  User.findOne({ email: req.body.email })
-    .then(user => {
-      if (user) {
-        res.render("profile/create", {
-          user: req.body,
-          errors: { email: "Email already registered" }
-        });
-      } else {
-        user = new User({
-          email: req.body.email,
-          name: req.body.name,
-          password: req.body.password,
-          token: token,
-          verified: false,
-          location: {
-            type: "Point",
-            coordinates: [req.body.longitude, req.body.latitude]
-          }
-        });
-        return user.save().then(user => {
-          transporter
-            .sendMail({
-              from: '"My Awesome Project 👻" <testironhack@gmail.com>',
-              to: `${user.email}`,
-              subject: "Email verification",
-              text: `http://localhost:3000/profile/verify/${user.token}`
-            })
-            .then(info => console.log(info))
-            .catch(error => console.log(error));
-
-          res.redirect("/sessions/create");
-        });
-      }
-    })
-    .catch(error => {
-      if (error instanceof mongoose.Error.ValidationError) {
-        res.render("profile/create", {
-          user: req.body,
-          errors: error.errors
-        });
-      } else {
-        next(error);
-      }
-    });
+module.exports.edit = (req, res, next) => {
+  res.render('profile/edit');
 };
 
 module.exports.doEdit = (req, res, next) => {
-  User.findByIdAndUpdate(req.user._id, { $set: req.body })
+  User.findByIdAndUpdate(req.user.id, { $set: req.body })
     .then(user => {
       if (!user) {
         next(createError(404, "User not found"));
       } else {
-        res.redirect("/profile/ridersettings");
+        res.redirect("/map");
       }
     })
     .catch(error => next(error));

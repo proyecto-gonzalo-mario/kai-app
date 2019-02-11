@@ -110,6 +110,16 @@ userSchema.methods.placeMatch = function(place) {
 }
 
 
+userSchema.methods.isProfileCompleted = function() {
+  return this.name && 
+    this.email && 
+    this.sports && 
+    this.windSpeedMax && 
+    this.windSpeedMin && 
+    this.swellHeightMax && 
+    this.swellHeightMin;
+}
+
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
