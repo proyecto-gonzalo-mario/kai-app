@@ -1,5 +1,5 @@
 <div>
-  <form action="/profile/edit" method="post">
+  <form action="/profile" method="post">
     <div class="form-group">
       <label for="exampleFormControlInput1">Name</label>
       <input type="text" class="form-control {{#if errors.name }}is-invalid{{/if}}" id="exampleFormControlInput1" placeholder="Name" value="{{ session.name }}"

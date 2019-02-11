@@ -30,6 +30,7 @@ module.exports.doEdit = (req, res, next) => {
       }
     })
     .catch(error => next(error));
+
 };
 
 module.exports.doDelete = (req, res, next) => {

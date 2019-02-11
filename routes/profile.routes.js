@@ -7,8 +7,8 @@ const completenessMiddleware = require('../middlewares/completed.middleware');
 
 
 router.get('/verify/:token', profileController.verify);
-router.get('/edit', authMiddleware.isAuthenticated, profileController.edit);
-router.post('/edit', authMiddleware.isAuthenticated, profileController.doEdit);
+router.get('/', authMiddleware.isAuthenticated, profileController.edit);
+router.post('/', authMiddleware.isAuthenticated, profileController.doEdit);
 router.post('/:id/delete', 
   authMiddleware.isAuthenticated, 
   authMiddleware.checkRole(constants.ROLE_ADMIN), 
