@@ -7,7 +7,7 @@ const placesConditions = require("../services/places-conditions.service");
 const transporter = require("../configs/nodemailer.config");
 const hbs = require("hbs");
 
-//const mailer = require('../notifiers/mail.notifier');
+const mailer = require('../notifiers/mail.notifier');
 //mailer.alert(user, m)
 
 
@@ -23,12 +23,7 @@ module.exports.checkConditions = (req, res, next) => {
           const places = user.placesMatch(conditions).map(place => place.name);
           if (places.length > 0) {
             // TODO: send mail to user
-            transporter.sendMail({
-              from: "Kai <testironhack@gmail.com>",
-              to: `${user.email}`,
-              subject: "Something cool is coming in your favorite spot",
-              html: ``
-            });
+            mailer.alert(user,places);
           } else {
             console.log("Not good bro");
             console.log(places);

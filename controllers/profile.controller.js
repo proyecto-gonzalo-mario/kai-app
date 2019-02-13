@@ -13,7 +13,7 @@ module.exports.verify = (req, res, next) => {
     { new: true }
   );
 
-  res.redirect("/sessions/create");
+  res.redirect("sessions/create");
 };
 
 module.exports.edit = (req, res, next) => {

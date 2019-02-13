@@ -1,30 +1,31 @@
-
-
 const transporter = require("../configs/nodemailer.config");
 
-module.exports.alert = (user, beachs) => {
+module.exports.alert = (user, beaches) => {
   transporter.sendMail({
     from: "Kai <testironhack@gmail.com>",
     to: `${user.email}`,
     subject: "Something cool is coming in your favorite spot",
-    html: beachs(beachs)
+    html: htmlBuilt
   });
-}
+};
 
-const html = (user, beachs) => {
-  const beatchsHtml = beachs(beachs);
+//html de layaout
+const htmlBuilt = (user, beaches) => {
+  const beachesHtml = beaches(beaches)
   return ```
   Hey!
-  ${beatchsHtml}
+  ${beachesHtml}
   ```;
-}
+};
 
-const beachs = (beachs) => {
-  return beachs.map(beach => {
-    return ```
+//html maqueta para playa
+const beaches = (beaches) => {
+  console.log(beaches)
+  return beaches
+    .map(beach => {
+      return ```
     <h1>Hello World</h1>
     ```;
-  }).join('');
-}
-
-const 
+    })
+    .join("");
+};
