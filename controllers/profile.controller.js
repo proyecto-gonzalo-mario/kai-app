@@ -17,7 +17,7 @@ module.exports.verify = (req, res, next) => {
 };
 
 module.exports.edit = (req, res, next) => {
-  res.render('profile/edit');
+  res.render('profile/edit1');
 };
 
 module.exports.doEdit = (req, res, next) => {

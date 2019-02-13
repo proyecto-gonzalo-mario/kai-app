@@ -97,8 +97,8 @@ a {
   color: rgba(0, 50, 58);
   padding-left: 50px;
   padding-top: 20px;
-  position: absolute;
-  opacity: 100%;
+  position: fixed;
+  /* opacity: 100%; */
 }
 
 .surf {
@@ -118,4 +118,17 @@ a {
 
 #sport-homepage {
   color: rgba(0, 50, 58);
+}
+
+
+/* Profile Settings View */
+
+#settings-pic {
+  max-width: 100%;
+  height: 100vh;
+  width: 75%;
+}
+
+#form-edit-settings {
+  font-size: 20px;
 }
