@@ -12,13 +12,17 @@
 
 <body>
   <nav class="navbar">
-	  <a href="/">Kai.</a>
+    <a href="/">Kai.</a>
   </nav>
 
   <div class="container">
     <div class="row no-gutters">
       <div class="col md-6 no-gutters d-flex justify-content-center align-items-center" id="main-text">
         <h2>Your surfing forecast in a cool email</h2>
+        <form action="/sessions/facebook" method="post" class="col-4 mx-auto">
+          <button class="btn btn-primary btn-block" type="submit">
+            <i class="fab fa-facebook"></i> Login with Facebook</button>
+        </form>
       </div>
 
       <div class="col md-6 no-gutters" id="main-pic">
