@@ -62,6 +62,10 @@ const userSchema = new mongoose.Schema({
   swellHeightMax: {
     type: Number
   },
+  range: {
+    type: String,
+    default: 'Some random numbers'
+  }
   
 }, { timestamps: true });
 

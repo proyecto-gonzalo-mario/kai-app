@@ -11,18 +11,23 @@
 </head>
 
 <body>
-  <nav class="navbar">
+  <nav class="navbar-kai">
     <a href="/">Kai.</a>
   </nav>
 
-  <div class="container">
+  <div class=" surf">
     <div class="row no-gutters">
-      <div class="col md-6 no-gutters d-flex justify-content-center align-items-center" id="main-text">
-        <h2>Your surfing forecast in a cool email</h2>
-        <form action="/sessions/facebook" method="post" class="col-4 mx-auto">
-          <button class="btn btn-primary btn-block" type="submit">
+      <div class="col md-6 no-gutters d-flex flex-column justify-content-center align-items-center" id="main-text">
+        <div class="d-flex">
+          <span></span>
+          <h2 class="title-home">Your <span id="sport-homepage">surfing</span> forecast in a cool email</h2>
+        </div>
+        <div>
+          <form action="/sessions/facebook" method="post" class="mx-auto">
+          <button class="btn btn-primary btn-block" id="fb-button" type="submit">
             <i class="fab fa-facebook"></i> Login with Facebook</button>
         </form>
+        </div>
       </div>
 
       <div class="col md-6 no-gutters" id="main-pic">
