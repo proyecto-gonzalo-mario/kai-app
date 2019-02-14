@@ -132,3 +132,22 @@ a {
 #form-edit-settings {
   font-size: 20px;
 }
+
+#main-nav {
+  font-size: 20px;
+  opacity: 100%;
+}
+
+.navbar-profile {
+  color: rgba(0, 50, 58);
+  padding-left: 50px;
+  padding-right: 20px;
+  padding-top: 20px;
+  /* height: 30px; */
+  width: 100vh;
+  font-size: 20px;
+}
+
+.logged-bar{
+  float: left;
+}
