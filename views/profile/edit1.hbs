@@ -12,6 +12,7 @@
 
       <div id="form-edit-settings">
         <form action="/profile" method="post">
+         <div id="name-email">
           <div class="form-group">
             <label for="exampleFormControlInput1">Name</label>
             <input type="text" class="form-control {{#if errors.name }}is-invalid{{/if}}" id="exampleFormControlInput1"
@@ -32,6 +33,8 @@
             </div>
             {{/if}}
           </div>
+          </div>
+          <div id="sports-select">
           <div class="form-group">
             <label for="exampleFormControlSelect2">Select your sports</label>
             <select multiple class="form-control" id="exampleFormControlSelect2" name="sports">
@@ -39,7 +42,8 @@
               <option>Windsurf</option>
               <option>Surf</option>
             </select>
-          </div>
+            </div>
+          {{!-- </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Max Wind Speed (km/h)</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="20" name="windSpeedMax"
@@ -59,7 +63,7 @@
             <label for="exampleFormControlInput1">Min Swell Height (m)</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="1.5"
               name="swellHeightMin" value="{{ session.swellHeightMin }}">
-          </div>
+          </div> --}}
           <input id="foo" type="text" class="js-range-slider" name="range" value="{{ session.range }}" />
 
           <script>

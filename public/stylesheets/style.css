@@ -8,3 +8,25 @@ a {
   height: 400px;
   margin-top:  20px;
 }
+
+#form-edit-settings {
+  display: flex
+
+}
+
+.form-group {
+  display: inline-flex;
+  justify-content: flex-start
+}
+
+#name-email {
+  margin-bottom: 200px;
+  justify-content: center;
+  
+}
+
+#sports-select {
+  margin-bottom: 100px;
+  position: relative
+}
+
