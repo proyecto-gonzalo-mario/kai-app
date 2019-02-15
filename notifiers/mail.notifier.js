@@ -11,10 +11,10 @@ module.exports.alert = (user, beaches) => {
 
 
 function getHtml(data) {
-  const html = ""
+  let html = ""
 
   data.forEach(d => {
-    html = html + "<div>dfmsdkfmlksdzfszd</div>"
+    html = html + `<div>${ d.days[0].weatherDesc }</div>`
   })
 
   return html

@@ -23,8 +23,8 @@ module.exports.checkConditions = (req, res, next) => {
           const places = user.placesMatch(conditions).map(place => place);
           if (places.length > 0) {
             // TODO: send mail to user
-              console.log(places[0].days);
-            // mailer.alert(user,places);
+              console.log(places);
+            mailer.alert(user,places);
           } else {
             console.log("Not good bro");
             console.log(places);
