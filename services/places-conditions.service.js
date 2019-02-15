@@ -20,7 +20,16 @@ module.exports.check = (place) => {
         name: place.name,
         date: weathers[i].date,
         windSpeed: weathers[i].hourly[0].windspeedKmph,
+        windDir: weathers[i].hourly[0].winddir16Point,
         swellHeight: weathers[i].hourly[0].swellHeight_m,
+        significantHeight_m: weathers[i].hourly[0].sigHeight_m,
+        swellDir16Point: weathers[i].hourly[0].swellDir16Point,
+        swellPeriod_secs: weathers[i].hourly[0].swellPeriod_secs,
+        tempC: weathers[i].hourly[0].tempC,
+        feelsLikeC: weathers[i].hourly[0].FeelsLikeC,
+        waterTemp_C: weathers[i].hourly[0].waterTemp_C,
+        weatherDesc: weathers[i].hourly[0].weatherDesc[0].value,
+        cloudcover: weathers[i].hourly[0].cloudcover
       })
     }
 

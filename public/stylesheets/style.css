@@ -1,8 +1,4 @@
 
-a {
-  color: #00B7FF;
-}
-
 #map {
   width:  100%;
   height: 400px;
@@ -10,23 +6,23 @@ a {
 }
 
 #form-edit-settings {
-  display: flex
+  /* display: flex */
 
 }
 
 .form-group {
-  display: inline-flex;
-  justify-content: flex-start
+  /* display: inline-flex;
+  justify-content: flex-start */
 }
 
 #name-email {
-  margin-bottom: 200px;
-  justify-content: center;
+  /* margin-bottom: 200px;
+  justify-content: center; */
   
 }
 
 #sports-select {
-  margin-bottom: 100px;
-  position: relative
+  /* margin-bottom: 100px;
+  position: relative */
 }
 

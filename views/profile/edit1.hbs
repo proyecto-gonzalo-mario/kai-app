@@ -4,7 +4,7 @@
       <img src="img/patrick-hendry-756577-unsplash.jpg" alt="" srcset="" id="settings-pic">
     </div>
 
-    <div class="col md-6 no-gutters d-flex flex-column justify-content-center align-items-center" id="main-text">
+    <div class="col md-6 no-gutters d-flex flex-column align-items-center" id="main-text">
       <div class="nav-inside">
         {{> nav2}}
       </div>
@@ -42,7 +42,8 @@
               <option>Surf</option>
             </select>
           </div> --}}
-          <select class="selectpicker" multiple data-live-search="true">
+          <label id="sports-selector" for="exampleFormControlInput1">Select your sports</label>
+          <select class="selectpicker" multiple data-live-search="true" name="sports" value="{{ session.sports }}">
             <option>Surf</option>
             <option>Kitesurf</option>
             <option>Windsurf</option>
@@ -72,19 +73,21 @@
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="1.5" name="swellHeightMin"
           value="{{ session.swellHeightMin }}">
       </div> --}}
-      <input id="foo" type="text" class="js-range-slider" name="range" value="{{ session.range }}" />
-      <input id="foo" type="text" class="js-range-slider" name="range" value="{{ session.range }}" />
+      <label id="swell-selector" for="exampleFormControlInput1">Wind you are confortable with</label>
+      <input id="foo" type="text" class="js-range-slider" name="rangeWind" value="{{ session.range }}" />
+      <label id="swell-selector"for="exampleFormControlInput1">Swell you are confortable with</label>
+      <input id="foo" type="text" class="js-range-slider" name="rangeSwell" value="{{ session.range }}" />
       <script>
         $(".js-range-slider").ionRangeSlider({
           type: "double",
-          from: 0,
-          to: 100
+          min: 0,
+          max: 50
         });
 
       </script>
 
       <div class="form-actions">
-        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+        <button class="btn btn-primary btn-block" id="update-pref-btn" type="submit">Update your preferences</button>
       </div>
 
 

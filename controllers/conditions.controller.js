@@ -20,10 +20,11 @@ module.exports.checkConditions = (req, res, next) => {
       });
       return Promise.all(beachesConditions).then(conditions => {
         users.forEach(user => {
-          const places = user.placesMatch(conditions).map(place => place.name);
+          const places = user.placesMatch(conditions).map(place => place);
           if (places.length > 0) {
             // TODO: send mail to user
-            mailer.alert(user,places);
+              console.log(places[0].days);
+            // mailer.alert(user,places);
           } else {
             console.log("Not good bro");
             console.log(places);

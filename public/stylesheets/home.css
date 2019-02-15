@@ -80,6 +80,7 @@ a {
 #main-text {
   height: 100vh;
   width: 100%;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 #main-pic {
@@ -113,7 +114,8 @@ a {
 #fb-button{
   background-color: rgba(0, 50, 58);
   border: none;
-  margin-top: 30px
+  margin-top: 30px;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 #sport-homepage {
@@ -126,11 +128,12 @@ a {
 #settings-pic {
   max-width: 100%;
   height: 100vh;
-  width: 75%;
+  width: 90%;
 }
 
 #form-edit-settings {
   font-size: 20px;
+  width: 75vh;
 }
 
 #main-nav {
@@ -145,9 +148,51 @@ a {
   padding-top: 20px;
   /* height: 30px; */
   width: 100vh;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .logged-bar{
   float: left;
+}
+
+.nav-inside {
+  width: 100vh;
+  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+#foo {
+  background-color: rgba(0, 50, 58);
+}
+
+#update-pref-btn {
+  background-color: rgba(0, 50, 58);
+  border: none;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  margin-top: 75px;
+}
+
+.nav-link {
+  color: rgba(0, 50, 58);
+}
+
+.nav {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 20px;
+}
+
+#exampleFormControlInput1 {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#sports-selector{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#wind-selector {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }

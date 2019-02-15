@@ -60,11 +60,13 @@ const userSchema = new mongoose.Schema({
     type: Number
   },
   swellHeightMax: {
-    type: Number
+    type: Number,
   },
-  range: {
-    type: String,
-    default: 'Some random numbers'
+  rangeWind: {
+    type: String
+  },
+  rangeSwell: {
+    type: String
   }
   
 }, { timestamps: true });
@@ -72,6 +74,14 @@ const userSchema = new mongoose.Schema({
 userSchema.index({ location: '2dsphere' });
 
 userSchema.pre('save', function(next) {
+  
+  // this.windSpeedMin = Number(this.rangeWind.split(';')[0]);
+  // this.windSpeedMax = Number(this.rangeWind.split(';')[1]);
+
+
+  // this.swellHeightMin = Number(this.rangeSwell.split(';')[0]);
+  // this.swellHeightMin = Number(this.rangeSwell.split(';')[1]);
+
   if (this.email === FIRST_ADMIN_EMAIL) {
     this.role = constants.ROLE_ADMIN;
   }
@@ -89,6 +99,7 @@ userSchema.pre('save', function(next) {
   } else {
     next();
   }
+
 });
 
 userSchema.methods.checkPassword = function(password) {
@@ -105,10 +116,10 @@ userSchema.methods.placeMatch = function(place) {
     const days = place.days;
     const res = [];
     days.forEach(day => {
-      res.push(day.windSpeed >= this.windSpeedMin 
-        && day.windSpeed <= this.windSpeedMax
-        && day.swellHeight >= this.swellHeightMin
-        && day.swellHeight <= this.swellHeightMax  )
+      res.push(day.windSpeed >= Number(this.rangeWind.split(';')[0])
+        && day.windSpeed <= Number(this.rangeWind.split(';')[1])
+        && day.swellHeight >= Number(this.rangeSwell.split(';')[0])
+        && day.swellHeight <= Number(this.rangeSwell.split(';')[1])  )
     });
     return res.includes(true);
 }
@@ -117,16 +128,11 @@ userSchema.methods.placeMatch = function(place) {
 userSchema.methods.isProfileCompleted = function() {
   return this.name && 
     this.email && 
-    this.sports && 
-    this.windSpeedMax && 
-    this.windSpeedMin && 
-    this.swellHeightMax && 
-    this.swellHeightMin;
+    this.sports &&
+    this.rangeWind && 
+    this.rangeSwell
 }
 
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
-
-// place =  { name: 'Valdevaqueros',
-//           days:[ [Object], [Object], [Object], [Object], [Object], [Object] ] };

@@ -5,27 +5,37 @@ module.exports.alert = (user, beaches) => {
     from: "Kai <testironhack@gmail.com>",
     to: `${user.email}`,
     subject: "Something cool is coming in your favorite spot",
-    html: htmlBuilt
+    html: getHtml(beaches)
   });
 };
 
+
+function getHtml(data) {
+  const html = ""
+
+  data.forEach(d => {
+    html = html + "<div>dfmsdkfmlksdzfszd</div>"
+  })
+
+  return html
+}
 //html de layaout
-const htmlBuilt = (user, beaches) => {
-  const beachesHtml = beaches(beaches)
-  return ```
-  Hey!
-  ${beachesHtml}
-  ```;
-};
+// const htmlBuilt = (user, beaches) => {
+//   const beachesHtml = beaches(beaches)
+//   return ```
+//   Hey!
+//   ${beachesHtml}
+//   ```;
+// };
 
 //html maqueta para playa
-const beaches = (beaches) => {
-  console.log(beaches)
-  return beaches
-    .map(beach => {
-      return ```
-    <h1>Hello World</h1>
-    ```;
-    })
-    .join("");
-};
+// const beaches = (beaches) => {
+//   console.log(beaches)
+//   return beaches
+//     .map(beach => {
+//       return ```
+//     <h1>Hello World</h1>
+//     ```;
+//     })
+//     .join("");
+// };
