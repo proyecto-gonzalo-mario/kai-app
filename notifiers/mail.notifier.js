@@ -9,10 +9,8 @@ module.exports.alert = (user, beaches) => {
   });
 };
 
-
 function getHtml(data) {
-  let html = 
-  `<head>
+  let html = `<head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta name="x-apple-disable-message-reformatting">
@@ -71,7 +69,7 @@ function getHtml(data) {
                               </tr>
                           </tbody>
                       </table>
-                      <table cellpadding="0" cellspacing="0" class="es-content" align="center">
+                      <table cellpadding="0" cellspacing="0" class="es-content esd-footer-popover" align="center">
                           <tbody>
                               <tr>
                                   <td class="esd-stripe" align="center">
@@ -125,223 +123,17 @@ function getHtml(data) {
                               </tr>
                           </tbody>
                       </table>
-                      <table cellpadding="0" cellspacing="0" class="es-content" align="center">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-stripe" align="center">
-                                      <table class="es-content-body" align="center" cellpadding="0" cellspacing="0" width="600">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-structure" align="left">
-                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="600" class="esd-container-frame" align="center" valign="top">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td align="center" class="esd-block-spacer" height="15"> </td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <table cellpadding="0" cellspacing="0" class="es-content" align="center">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-stripe" align="center">
-                                      <table class="es-content-body" align="center" cellpadding="0" cellspacing="0" width="600">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-structure" align="left">
-                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="600" class="esd-container-frame" align="center" valign="top">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td align="left" class="esd-block-text">
-                                                                                      <p>Texto</p>
-                                                                                  </td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <table cellpadding="0" cellspacing="0" class="es-content" align="center">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-stripe" align="center">
-                                      <table class="es-content-body" align="center" cellpadding="0" cellspacing="0" width="600">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-structure" align="left">
-                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="600" class="esd-container-frame" align="center" valign="top">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td align="center" class="esd-block-spacer" height="40" bgcolor="#f6f6f6"> </td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <table cellpadding="0" cellspacing="0" class="es-content" align="center">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-stripe" align="center">
-                                      <table class="es-content-body" align="center" cellpadding="0" cellspacing="0" width="600">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-structure" align="left">
-                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="600" class="esd-container-frame" align="center" valign="top">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td align="center" class="esd-empty-container" style="display: none;"></td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <table cellpadding="0" cellspacing="0" class="es-footer" align="center">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-stripe" align="center">
-                                      <table class="es-footer-body" align="center" cellpadding="0" cellspacing="0" width="600">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-structure es-p30t es-p20r es-p40l" align="left">
-                                                      <!--[if mso]><table width="540"><tr><td width="352" valign="top"><![endif]-->
-                                                      <table cellpadding="0" cellspacing="0" class="es-left" align="left">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="352" class="es-m-p0r es-m-p20b esd-container-frame" valign="top" align="center">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td align="center" class="esd-empty-container" style="display: none;"></td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                      <!--[if mso]></td><td width="20"></td><td width="168" valign="top"><![endif]-->
-                                                      <table cellpadding="0" cellspacing="0" align="right">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="168" align="left" class="esd-container-frame">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td align="center" class="esd-empty-container" style="display: none;"></td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                      <!--[if mso]></td></tr></table><![endif]-->
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <table cellpadding="0" cellspacing="0" class="esd-footer-popover es-content" align="center">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-stripe" align="center">
-                                      <table class="es-content-body" align="center" cellpadding="0" cellspacing="0" width="600" style="background-color: transparent;">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-structure es-p30t es-p30b es-p20r es-p20l" align="left">
-                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="560" class="esd-container-frame" align="center" valign="top">
-                                                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                                                          <tbody>
-                                                                              <tr>
-                                                                                  <td class="esd-block-image es-infoblock" align="center">
-                                                                                      <a target="_blank" href="http://viewstripo.email/?utm_source=templates&utm_medium=email&utm_campaign=basic&utm_content=training"> <img src="https://demo.stripo.email/content/guids/videoImgGuid/images/83131550191713702.png" alt="" width="160" style="display: block;"> </a>
-                                                                                  </td>
-                                                                              </tr>
-                                                                          </tbody>
-                                                                      </table>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
                   </td>
               </tr>
           </tbody>
       </table>
   </div>
-</body>`
+</body>`;
 
-data.forEach(d => {
-  html = html + `<td align="center" class="esd-block-text">
+  data.forEach(d => {
+    html =
+      html +
+      `<td align="center" class="esd-block-text">
   <p>${d.name}</p>
   <p><br></p>
   <table border="1" align="center" cellspacing="1" cellpadding="1" style="width: 500px;">
@@ -461,9 +253,8 @@ data.forEach(d => {
       </tbody>
   </table>
   <p><br></p>
-</td>`
-})
-  
+</td>`;
+  });
 
-  return html
+  return html;
 }
