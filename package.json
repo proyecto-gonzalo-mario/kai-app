@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "DEBUG=proyecto-modulo2:* nodemon -e hbs,js --inspect ./bin/www",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "express-session": "^1.15.6",
     "grunt": "^1.0.3",
     "hbs": "^4.0.1",
+    "heroku": "^7.21.0",
     "http-errors": "^1.7.1",
     "leaflet-search": "^2.9.8",
     "mongoose": "^5.4.7",
